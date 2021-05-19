@@ -7,11 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  texto = 'Esto es un video de event binding';
+  texto = '';
 
 
-  cambiarTexto(): void{
-    this.texto = "En el proximo video vamos a ver otra cosa";
-  }
+
 
 }
