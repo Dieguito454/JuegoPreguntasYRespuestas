@@ -13,10 +13,20 @@
             <th>Estado</th>
         </thead>
         <tbody>
-            <tr *ngFor="let estudiantes of listadoEstudiantes; let i = index">
+            <tr *ngFor="let estudiantes of listadoEstudiantes; let i = index" [ngSwitch]="estudiantes.Estado">
                 <td>{{i + 1}}</td>
                 <td>{{estudiantes.nombre}}</td>
-                <td [ngStyle]="{'font-style': estudiantes.estado === 'Promocionado' ? 'italic' : 'normal'} " >{{estudiantes.Estado}}</td>
+                <td>
+                    <span *ngSwitchCase="'Promocionado'" class="badge badge-success">
+                        {{estudiantes.Estado}}
+                    </span>
+                    <span *ngSwitchCase="'Regular'" class="badge badge-secondary">
+                        {{estudiantes.Estado}}
+                    </span>
+                    <span *ngSwitchCase="'Libre'" class="badge badge-danger">
+                        {{estudiantes.Estado}}
+                    </span>
+                </td>
             </tr>
            
         </tbody>
