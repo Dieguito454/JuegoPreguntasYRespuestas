@@ -13,7 +13,12 @@ export class AppComponent {
    {nombre: 'Mario', Estado:'Promocionado'}
  ]
 
+mostrar = true;
 
+ toggle() :void{
+
+    this.mostrar = !this.mostrar;
+ }
 
 
 }
