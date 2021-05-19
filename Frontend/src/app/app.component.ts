@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  texto = '';
+ listadoEstudiantes: any[]=[
+   {nombre: 'Juan', Estado:'Regular'},
+   {nombre: 'Miguel', Estado:'Regular'},
+   {nombre: 'Mario', Estado:'Promocionado'}
+ ]
 
 
 
