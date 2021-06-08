@@ -1,0 +1,35 @@
+
+p{
+    font-family: 'Mate SC', serif;
+    font-size: 2.3em;
+    color:black;
+    background-color:white;
+}
+
+.container{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.hr{
+    border-width: 3px;
+    max-width: 65px;
+    border-color: darkorange;
+}
+
+.btn-xl{
+
+    background-color: darkorange;
+    border-color: darkorange;
+    margin: 10px;
+    padding: 1rem 2rem;
+    border-radius:100px;
+}
+
+.btn-xl:hover{
+    background: rgb(241, 152, 42);
+    border-radius: rgb(241, 152, 42);
+    border-width: 4px;
+}
