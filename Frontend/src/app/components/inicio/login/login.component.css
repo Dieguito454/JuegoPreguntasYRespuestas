@@ -10,6 +10,9 @@ h3{
 }
 
 div.form-group{
+    /* display:flex;
+     justify-content: center;
+    align-items: center;  */
     font-family: 'Mate SC', serif;
 }
 

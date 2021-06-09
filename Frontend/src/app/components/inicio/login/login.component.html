@@ -2,22 +2,30 @@
 <div class="container">
     <div class="row" style="width: 100%">
         <div class="col-lg-6 offset-lg-3">
-            <div class="card text-center" style="padding: 20px">
+            <div class="card text-center" style="padding: 5px">
                 <h3>Login</h3>
                 <br>
-                <div class="form-group">
-                       <input type="text" class="form-group" placeholder="Ingrese usuario"> 
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-group" placeholder="Ingrese contraseña">
-                </div>                
-                <div class="form-group">
-                    <button class="btn btn-primary mr-2 btn-login">Aceptar</button>
-                    <button class="btn btn-secondary" routerLink="/bienvenidos">Volver</button>
-                </div>
-                <div class="form-group">
-                    <a style="color:darkorange; cursor: pointer;" routerLink="/register">Crear usuario</a>
-                </div>
+                <form [formGroup]="login" (ngSubmit)=log()>
+                    <div class="form-group" style="text-align: start;">
+                        <input type="text" class="form-group" placeholder="Ingrese usuario" formControlName="usuario">
+                        <br>
+                        <div class="text-danger" *ngIf="login.get('usuario')!.hasError('required') && login.get('usuario')!.touched"> Es necesario <strong> ingresar el usuario </strong> </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-group" placeholder="Ingrese contraseña" formControlName="password">
+                        <br>
+                        <span class="text-danger ml-2" *ngIf="login.get('password')?.hasError('required') && login.get('password')?.touched">
+                            Es necesario <strong>ingresar la contraseña</strong> 
+                        </span>
+                    </div>                
+                    <div class="form-group">
+                        <button class="btn btn-primary mr-2 btn-login" [disabled]="login.invalid">Aceptar</button>
+                        <button class="btn btn-secondary" routerLink="/bienvenidos">Volver</button>
+                    </div>
+                    <div class="form-group">
+                        <a style="color:darkorange; cursor: pointer;" routerLink="/register">Crear usuario</a>
+                    </div>
+                </form>
             </div>
      </div>
     </div>
