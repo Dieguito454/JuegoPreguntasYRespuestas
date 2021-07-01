@@ -1,0 +1,16 @@
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+h3 {
+    font-family: 'Mate SC', serif;
+   }
+
+.btn-reg{
+    background-color: darkorange; ;
+    border-color: darkorange;
+}

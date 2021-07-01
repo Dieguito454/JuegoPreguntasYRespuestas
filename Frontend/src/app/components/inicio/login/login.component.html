@@ -6,7 +6,7 @@
                 <h3>Login</h3>
                 <br>
                 <form [formGroup]="login" (ngSubmit)=log()>
-                    <div class="form-group" style="text-align: start;">
+                    <div class="form-group">
                         <input type="text" class="form-group" placeholder="Ingrese usuario" formControlName="usuario">
                         <br>
                         <div class="text-danger" *ngIf="login.get('usuario')!.hasError('required') && login.get('usuario')!.touched"> Es necesario <strong> ingresar el usuario </strong> </div>

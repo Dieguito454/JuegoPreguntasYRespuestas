@@ -1,1 +1,43 @@
-<p>register works!</p>
+    <div class="container">
+        <div class="row" style="width: 100%;">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="card text-center" style="padding: 20px;">
+                    <h3>Registrarse</h3>
+                    <br>
+                    <form [formGroup]= "register" (ngSubmit)="registrarUsuarios()">
+                        <div class="form-group">
+                            <input type="text" class="forms-control" placeholder="Ingrese nuevo usuario" formControlName="usuario">                                  
+                            <br>
+                            <span class="text-danger" *ngIf="register.get('usuario')!.hasError('required') && register.get('usuario')!.touched">
+                                El usuario <strong> es requerido</strong>
+                            </span>                                
+                        </div>
+                        <div class ="form-group">
+                            <input type="password" class="forms-control" placeholder="Ingrese su clave" formControlName="clave"> 
+                            <br>
+                            <span class="text-danger ml-2" *ngIf="register.get('clave')!.hasError('required') && register.get('clave')!.touched">
+                                La contraseña <strong> es requerido</strong>                                
+                            </span>
+                            <span class="text-danger ml-2" *ngIf="register.get('clave')!.hasError('minlength') && register.get('clave')!.touched">
+                                La contraseña debe tener  <strong> minimo 4 caracteres</strong>
+                            </span>
+                        </div>                                
+                        <div class="form-group">
+                            <input type="password" class="forms-control" placeholder="Repita su clave" formControlName="nuevaClave">                            
+                            <br>
+                            <span class="text-danger ml-2" *ngIf="register.get('nuevaClave')!.valid && register.get('clave')!.value != register.get('nuevaClave')!.value">
+                                La contraseña <strong> debe ser igual</strong>
+                            </span>
+ 
+                        </div>
+                                                    
+                        <div class="form-group">
+                            <button class="btn-primary mr-2 btn-reg" type="submit" > Aceptar</button> 
+                            <button class="btn-secondary" routerLink="/bienvenidos">Volver</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
